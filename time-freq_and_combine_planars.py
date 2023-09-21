@@ -12,13 +12,10 @@ subjects_dir = '/net/server/data/Archive/piansrann/freesurfer'
 subjects = ['W001','W002','W003','W004','W005','W006','W007', 'W008','W009','W010','W011','W012',
             'W013','W014','W015']                                             
 L_freq = 4
-H_freq = 7
+H_freq = 8
 f_step = 1
 
 time_bandwidth = 4 #(by default = 4)
-# if delta (1 - 4 Hz) 
-#n_cycles = np.array([1, 1, 1, 2]) # уточнить
-
 freqs = np.arange(L_freq, H_freq, f_step)
 n_cycles = freqs//2
 
@@ -27,15 +24,11 @@ period_end = 4.0
 
 baseline = (-1, -0.4)
 
-freq_range = 'beta_16_30'
-
 
 rounds = [1, 2, 3, 4, 5, 6]
 
 group=['a_1','b_1','c_1','d_1']
-
 stim_type=['pict','comb','sound','pict_CS','comb_CS','sound_CS']
-
 data_path = '/net/server/data/Archive/piansrann/pultsinak/meg/raw_without_ica'
 
 
