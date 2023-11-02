@@ -57,7 +57,7 @@ for (i in files$sensor){
   temp <- fread(files[sensor==i]$full_filename)
   temp$V1 <- NULL
   temp <- as.data.table(temp)
-  temp <- temp[subject %in% subj_list$`unique(df1$subject)`]
+  temp <- temp[subject %in% subj_list$`unique(df$subject)`]
   
   temp$sensor <- i
   temp$sensor_name <- files[sensor==i]$sensor_name
