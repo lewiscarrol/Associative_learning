@@ -50,11 +50,19 @@ new_df$subject<- as.factor(new_df$subject)
 cols <- colnames(new_df)[grep('[0-9]',colnames(new_df))]
 sensors<- unique(new_df$sensor)
 
-
+###### !!! remove runs for 1 day ######
 df1 <- new_df[new_df$round!= "run1", ]
 df1 <- df1 [df1 $round!= "run2", ]
-
-
+###### !!! remove runs for 2 day ######
+df1 <- new_df[new_df$round!= "run4", ]
+df1 <- df1 [df1 $round!= "run5", ]
+df1 <- df1 [df1 $round!= "run6", ]
+###### create table if you want to merge stims pict and sound at one type - element
+elem<- filter(df1, CS_type=='pict'|CS_type=='sound')
+elem$type<- 'element'
+complex<- filter(df1, CS_type=='comb')
+complex$type<- 'complex'
+new_df1<- rbind(complex, elem)
 
 
 emm_options(lmerTest.limit = 10000)
