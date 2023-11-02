@@ -74,7 +74,7 @@ pval_in_intevals = []
 for i in range(102):
 
     pval_s = df[df['sensor'] == i]
-    pval = pval_s['US_type'].tolist()
+    pval = pval_s['CS_type:US_type'].tolist()
 
     pval_in_intevals.append(pval)
     
